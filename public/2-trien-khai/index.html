@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/tagging-workshop/images/favicon.png" type="image/png">
 
-    <title>Tags :: Create a new AWS account.</title>
+    <title>Triển khai :: Create a new AWS account.</title>
 
     
-    <link href="/tagging-workshop/css/nucleus.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/fontawesome-all.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/hybrid.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/featherlight.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/perfect-scrollbar.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/auto-complete.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/atom-one-dark-reasonable.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/theme.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/tabs.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/hugo-theme.css?1753195333" rel="stylesheet">
+    <link href="/tagging-workshop/css/nucleus.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/fontawesome-all.min.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/hybrid.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/featherlight.min.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/perfect-scrollbar.min.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/auto-complete.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/atom-one-dark-reasonable.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/theme.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/tabs.css?1753197007" rel="stylesheet">
+    <link href="/tagging-workshop/css/hugo-theme.css?1753197007" rel="stylesheet">
     
-    <link href="/tagging-workshop/css/theme-workshop.css?1753195333" rel="stylesheet">
+    <link href="/tagging-workshop/css/theme-workshop.css?1753197007" rel="stylesheet">
     
     
 
-    <script src="/tagging-workshop/js/jquery-3.3.1.min.js?1753195333"></script>
+    <script src="/tagging-workshop/js/jquery-3.3.1.min.js?1753197007"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tagging-workshop/tags/">
+  <body class="" data-url="/tagging-workshop/2-trien-khai/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -58,25 +58,19 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/tagging-workshop/js/lunr.min.js?1753195333"></script>
-<script type="text/javascript" src="/tagging-workshop/js/auto-complete.js?1753195333"></script>
+<script type="text/javascript" src="/tagging-workshop/js/lunr.min.js?1753197007"></script>
+<script type="text/javascript" src="/tagging-workshop/js/auto-complete.js?1753197007"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/tagging-workshop\/";
     
 </script>
-<script type="text/javascript" src="/tagging-workshop/js/search.js?1753195333"></script>
+<script type="text/javascript" src="/tagging-workshop/js/search.js?1753197007"></script>
 
     
   </div>
   
-    <section id="homelinks">
-      <ul>
-        <li>
-            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
-        </li>
-      </ul>
-    </section>
+ 
   
 
     <div class="highlightable">
@@ -120,7 +114,7 @@
     
     <li data-nav-id="/tagging-workshop/2-trien-khai/" title="Triển khai" class="dd-item
         
-        
+        active
         
         ">
       <a href="/tagging-workshop/2-trien-khai/">
@@ -266,7 +260,7 @@
             
           
           
-            <a href='/tagging-workshop/'>Tổng quan</a> > Tags
+            <a href='/tagging-workshop/'>Tổng quan</a> > Triển khai
           
         
           
@@ -277,7 +271,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cấu-trúc-tài-khoản-aws">Cấu trúc Tài khoản AWS</a></li>
+        <li><a href="#yêu-cầu">Yêu cầu</a></li>
+        <li><a href="#công-cụ">Công cụ:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -293,9 +297,7 @@
           
             <h1>
               
-                tag ::
-              
-              Tags
+              Triển khai
             </h1>
           
 
@@ -303,11 +305,19 @@
 
 
 
+	<h3 id="cấu-trúc-tài-khoản-aws">Cấu trúc Tài khoản AWS</h3>
+<p>AWS Organizations: 1 tài khoản quản lý (Management Account), nhiều tài khoản con (Member Accounts)</p>
+<h3 id="yêu-cầu">Yêu cầu</h3>
+<p>IAM Roles:</p>
+<p>OrganizationAccountAccessRole</p>
+<p>TagAutomationLambdaRole</p>
+<p>SCPs: Chặn tạo tài nguyên không gắn tag</p>
+<h3 id="công-cụ">Công cụ:</h3>
+<p>AWS CLI đã cấu hình &ndash;profile cho từng account</p>
+<p>AWS Console, AWS CDK (Python/TypeScript), Terraform (nếu sử dụng)</p>
 
 
-<ul>
-	
-</ul>
+
 
 
 <footer class=" footline" >
@@ -364,6 +374,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -378,6 +389,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -402,8 +416,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tagging-workshop/1-preparation/" title="Chuẩn bị"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tagging-workshop/1-preparation/" title="Chuẩn bị" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tagging-workshop/2-trien-khai/2.1-phat-hien-tai-nguyen-moi/" title="Phát hiện tài nguyên mới" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -413,19 +429,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/tagging-workshop/js/clipboard.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/perfect-scrollbar.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/perfect-scrollbar.jquery.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/jquery.sticky.js?1753195333"></script>
-    <script src="/tagging-workshop/js/featherlight.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/highlight.pack.js?1753195333"></script>
+    <script src="/tagging-workshop/js/clipboard.min.js?1753197007"></script>
+    <script src="/tagging-workshop/js/perfect-scrollbar.min.js?1753197007"></script>
+    <script src="/tagging-workshop/js/perfect-scrollbar.jquery.min.js?1753197007"></script>
+    <script src="/tagging-workshop/js/jquery.sticky.js?1753197007"></script>
+    <script src="/tagging-workshop/js/featherlight.min.js?1753197007"></script>
+    <script src="/tagging-workshop/js/highlight.pack.js?1753197007"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/tagging-workshop/js/modernizr.custom-3.6.0.js?1753195333"></script>
-    <script src="/tagging-workshop/js/learn.js?1753195333"></script>
-    <script src="/tagging-workshop/js/hugo-learn.js?1753195333"></script>
+    <script src="/tagging-workshop/js/modernizr.custom-3.6.0.js?1753197007"></script>
+    <script src="/tagging-workshop/js/learn.js?1753197007"></script>
+    <script src="/tagging-workshop/js/hugo-learn.js?1753197007"></script>
     
         
-            <script src="/tagging-workshop/mermaid/mermaid.js?1753195333"></script>
+            <script src="/tagging-workshop/mermaid/mermaid.js?1753197007"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

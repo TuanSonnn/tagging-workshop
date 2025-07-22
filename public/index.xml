@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setting up an AWS account on Create a new AWS account.</title>
-    <link>/</link>
-    <description>Recent content in Setting up an AWS account on Create a new AWS account.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <title>Tổng quan on Create a new AWS account.</title>
+    <link>http://localhost:1313/tagging-workshop/</link>
+    <description>Recent content in Tổng quan on Create a new AWS account.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/tagging-workshop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thiết lập Tài Khoản AWS</title>
+      <link>http://localhost:1313/tagging-workshop/_index.vi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tagging-workshop/_index.vi/</guid>
+      <description>&lt;h1 id=&#34;tạo-tài-khoản-aws-đầu-tiên&#34;&gt;Tạo tài khoản AWS đầu tiên&lt;/h1&gt;&#xA;&lt;h4 id=&#34;tổng-quan&#34;&gt;Tổng quan&lt;/h4&gt;&#xA;&lt;p&gt;Trong bài lab đầu tiên này, bạn sẽ tạo mới &lt;strong&gt;tài khoản AWS&lt;/strong&gt; đầu tiên của mình, tạo &lt;strong&gt;MFA&lt;/strong&gt; (Multi-factor Authentication) để gia tăng bảo mật tài khoản của bạn. Bước tiếp theo bạn sẽ tạo &lt;strong&gt;Admin Group&lt;/strong&gt;, &lt;strong&gt;Admin User&lt;/strong&gt; để quản lý quyền truy cập vào các tài nguyên trong tài khoản của mình thay vì sử dụng user root.&lt;br&gt;&#xA;Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn đề, bạn sẽ được hướng dẫn hỗ trợ xác thực tài khoản với &lt;strong&gt;AWS Support&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

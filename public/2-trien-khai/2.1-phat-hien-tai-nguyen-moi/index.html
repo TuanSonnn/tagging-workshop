@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/tagging-workshop/images/favicon.png" type="image/png">
 
-    <title>Tags :: Create a new AWS account.</title>
+    <title>Phát hiện tài nguyên mới</title>
 
     
-    <link href="/tagging-workshop/css/nucleus.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/fontawesome-all.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/hybrid.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/featherlight.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/perfect-scrollbar.min.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/auto-complete.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/atom-one-dark-reasonable.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/theme.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/tabs.css?1753195333" rel="stylesheet">
-    <link href="/tagging-workshop/css/hugo-theme.css?1753195333" rel="stylesheet">
+    <link href="/tagging-workshop/css/nucleus.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/fontawesome-all.min.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/hybrid.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/featherlight.min.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/perfect-scrollbar.min.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/auto-complete.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/atom-one-dark-reasonable.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/theme.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/tabs.css?1753197023" rel="stylesheet">
+    <link href="/tagging-workshop/css/hugo-theme.css?1753197023" rel="stylesheet">
     
-    <link href="/tagging-workshop/css/theme-workshop.css?1753195333" rel="stylesheet">
+    <link href="/tagging-workshop/css/theme-workshop.css?1753197023" rel="stylesheet">
     
     
 
-    <script src="/tagging-workshop/js/jquery-3.3.1.min.js?1753195333"></script>
+    <script src="/tagging-workshop/js/jquery-3.3.1.min.js?1753197023"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tagging-workshop/tags/">
+  <body class="" data-url="/tagging-workshop/2-trien-khai/2.1-phat-hien-tai-nguyen-moi/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -58,25 +58,19 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/tagging-workshop/js/lunr.min.js?1753195333"></script>
-<script type="text/javascript" src="/tagging-workshop/js/auto-complete.js?1753195333"></script>
+<script type="text/javascript" src="/tagging-workshop/js/lunr.min.js?1753197023"></script>
+<script type="text/javascript" src="/tagging-workshop/js/auto-complete.js?1753197023"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/tagging-workshop\/";
     
 </script>
-<script type="text/javascript" src="/tagging-workshop/js/search.js?1753195333"></script>
+<script type="text/javascript" src="/tagging-workshop/js/search.js?1753197023"></script>
 
     
   </div>
   
-    <section id="homelinks">
-      <ul>
-        <li>
-            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
-        </li>
-      </ul>
-    </section>
+
   
 
     <div class="highlightable">
@@ -119,7 +113,7 @@
   
     
     <li data-nav-id="/tagging-workshop/2-trien-khai/" title="Triển khai" class="dd-item
-        
+        parent
         
         
         ">
@@ -151,7 +145,7 @@
     
     <li data-nav-id="/tagging-workshop/2-trien-khai/2.1-phat-hien-tai-nguyen-moi/" title="Phát hiện tài nguyên mới" class="dd-item
         
-        
+        active
         
         ">
       <a href="/tagging-workshop/2-trien-khai/2.1-phat-hien-tai-nguyen-moi/">
@@ -266,7 +260,13 @@
             
           
           
-            <a href='/tagging-workshop/'>Tổng quan</a> > Tags
+            
+            
+          
+          
+            <a href='/tagging-workshop/'>Tổng quan</a> > <a href='/tagging-workshop/2-trien-khai/'>Triển khai</a> > Phát hiện tài nguyên mới
+          
+        
           
         
           
@@ -293,9 +293,7 @@
           
             <h1>
               
-                tag ::
-              
-              Tags
+              Phát hiện tài nguyên mới
             </h1>
           
 
@@ -303,11 +301,42 @@
 
 
 
+	<p>Truy cập EventBridge</p>
+<p>Vào AWS Console: <a href="https://console.aws.amazon.com/eventbridge">https://console.aws.amazon.com/eventbridge</a></p>
+<p>Chọn &ldquo;Rules&rdquo; → Click Create Rule</p>
+<p>Bước 2.1.2 – Cấu hình Rule</p>
+<p>Name: TagEnforcementRule</p>
+<p>Event Bus: Default</p>
+<p>Rule Type: Rule with an event pattern</p>
+<p>Bước 2.1.3 – Thiết lập mẫu sự kiện (Event pattern)</p>
+<p>Chọn AWS events or EventBridge partner events</p>
+<p>Dán mẫu JSON sau:</p>
+<p>{
+&ldquo;source&rdquo;: [&ldquo;aws.ec2&rdquo;, &ldquo;aws.s3&rdquo;, &ldquo;aws.rds&rdquo;],
+&ldquo;detail-type&rdquo;: [&ldquo;AWS API Call via CloudTrail&rdquo;],
+&ldquo;detail&rdquo;: {
+&ldquo;eventName&rdquo;: [&ldquo;CreateVolume&rdquo;, &ldquo;RunInstances&rdquo;, &ldquo;CreateBucket&rdquo;]
+}
+}</p>
+<p>Click Next</p>
+<p>Bước 2.1.4 – Thêm đích (Target)</p>
+<p>Target type: AWS service</p>
+<p>Select target: Lambda function</p>
+<p>Function: AutoTagNewResource</p>
+<p>Enable Retry &amp; Dead-letter queue nếu muốn</p>
+<p>Bước 2.1.5 – Kích hoạt Rule</p>
+<p>Review lại cấu hình và click Create Rule</p>
+<p>✅ Gợi ý: Đảm bảo CloudTrail đã được bật và ghi nhận các API tương ứng để sự kiện được gửi đến EventBridge đúng cách.
+{
+&ldquo;source&rdquo;: [&ldquo;aws.ec2&rdquo;, &ldquo;aws.s3&rdquo;, &ldquo;aws.rds&rdquo;],
+&ldquo;detail-type&rdquo;: [&ldquo;AWS API Call via CloudTrail&rdquo;],
+&ldquo;detail&rdquo;: {
+&ldquo;eventName&rdquo;: [&ldquo;CreateVolume&rdquo;, &ldquo;RunInstances&rdquo;, &ldquo;CreateBucket&rdquo;]
+}
+}</p>
 
 
-<ul>
-	
-</ul>
+
 
 
 <footer class=" footline" >
@@ -364,6 +393,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -378,6 +408,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -401,6 +432,8 @@
 
 	 
 	 
+		
+			<a class="nav nav-prev" href="/tagging-workshop/2-trien-khai/" title="Triển khai"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/tagging-workshop/1-preparation/" title="Chuẩn bị" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -413,19 +446,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/tagging-workshop/js/clipboard.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/perfect-scrollbar.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/perfect-scrollbar.jquery.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/jquery.sticky.js?1753195333"></script>
-    <script src="/tagging-workshop/js/featherlight.min.js?1753195333"></script>
-    <script src="/tagging-workshop/js/highlight.pack.js?1753195333"></script>
+    <script src="/tagging-workshop/js/clipboard.min.js?1753197023"></script>
+    <script src="/tagging-workshop/js/perfect-scrollbar.min.js?1753197023"></script>
+    <script src="/tagging-workshop/js/perfect-scrollbar.jquery.min.js?1753197023"></script>
+    <script src="/tagging-workshop/js/jquery.sticky.js?1753197023"></script>
+    <script src="/tagging-workshop/js/featherlight.min.js?1753197023"></script>
+    <script src="/tagging-workshop/js/highlight.pack.js?1753197023"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/tagging-workshop/js/modernizr.custom-3.6.0.js?1753195333"></script>
-    <script src="/tagging-workshop/js/learn.js?1753195333"></script>
-    <script src="/tagging-workshop/js/hugo-learn.js?1753195333"></script>
+    <script src="/tagging-workshop/js/modernizr.custom-3.6.0.js?1753197023"></script>
+    <script src="/tagging-workshop/js/learn.js?1753197023"></script>
+    <script src="/tagging-workshop/js/hugo-learn.js?1753197023"></script>
     
         
-            <script src="/tagging-workshop/mermaid/mermaid.js?1753195333"></script>
+            <script src="/tagging-workshop/mermaid/mermaid.js?1753197023"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

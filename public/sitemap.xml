@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>vi/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/tagging-workshop/1-preparation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/2-trien-khai/2.1-phat-hien-tai-nguyen-moi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/_index.vi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/2-trien-khai/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tagging-workshop/tags/</loc>
+  </url>
+</urlset>
