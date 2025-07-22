@@ -1,4 +1,8 @@
 # Change the default theme to be use when building the site with Hugo
+baseURL = "https://tuansonnn.github.io/tagging-workshop/"
+languageCode = "en-us"
+title = "AWS Workshop"
+theme = "hugo-theme-learn"
 theme = "hugo-theme-learn"
 
 # For search functionality
