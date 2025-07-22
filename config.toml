@@ -3,7 +3,7 @@ baseURL = "https://tuansonnn.github.io/tagging-workshop/"
 languageCode = "en-us"
 title = "AWS Workshop"
 theme = "hugo-theme-learn"
-theme = "hugo-theme-learn"
+
 
 # For search functionality
 [outputs]
