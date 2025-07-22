@@ -1,9 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>MFA for AWS Accounts on Create a new AWS account.</title>
-    <link>/2-mfa-setup-for-aws-user-root/</link>
-    <description>Recent content in MFA for AWS Accounts on Create a new AWS account.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/2-mfa-setup-for-aws-user-root/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MFA for AWS Accounts on Create a new AWS account.</title><link>https://tuansonnn.github.io/tagging-workshop/2-mfa-setup-for-aws-user-root/</link><description>Recent content in MFA for AWS Accounts on Create a new AWS account.</description><generator>Hugo 0.125.0</generator><language>en</language><atom:link href="https://tuansonnn.github.io/tagging-workshop/2-mfa-setup-for-aws-user-root/index.xml" rel="self" type="application/rss+xml"/><item><title>MFA cho Tài khoản AWS</title><link>https://tuansonnn.github.io/tagging-workshop/2-mfa-setup-for-aws-user-root/_index.vi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tuansonnn.github.io/tagging-workshop/2-mfa-setup-for-aws-user-root/_index.vi/</guid><description>Hướng dẫn Thiết lập Multi-Factor Authentication (MFA) Trong quy trình bảo mật, việc sử dụng Multi-Factor Authentication (MFA) rất quan trọng. Trong bước này, bạn sẽ sử dụng ba loại thiết bị MFA khác nhau để tăng cường tính bảo mật.
+Thiết bị MFA ảo trên smartphone Một cách phổ biến để thực hiện MFA là sử dụng các ứng dụng MFA trên điện thoại thông minh. Có ba ứng dụng phổ biến mà bạn có thể sử dụng:</description></item></channel></rss>

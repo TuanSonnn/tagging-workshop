@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Create Admin Group and Admin User on Create a new AWS account.</title>
-    <link>/3-create-admin-user-and-group/</link>
-    <description>Recent content in Create Admin Group and Admin User on Create a new AWS account.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/3-create-admin-user-and-group/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Create Admin Group and Admin User on Create a new AWS account.</title><link>https://tuansonnn.github.io/tagging-workshop/3-create-admin-user-and-group/</link><description>Recent content in Create Admin Group and Admin User on Create a new AWS account.</description><generator>Hugo 0.125.0</generator><language>en</language><atom:link href="https://tuansonnn.github.io/tagging-workshop/3-create-admin-user-and-group/index.xml" rel="self" type="application/rss+xml"/><item><title>Tạo Admin Group và Admin User</title><link>https://tuansonnn.github.io/tagging-workshop/3-create-admin-user-and-group/_index.vi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tuansonnn.github.io/tagging-workshop/3-create-admin-user-and-group/_index.vi/</guid><description>Tạo Admin Group Đăng nhập vào Bảng điều khiển ở trang AWS Web Service page
+Nhấn vào tên tài khoản ở góc trên bên phải và chọn My Security Credentials
+Lưu ý: Trong trường hợp không thấy menu My Security Credentials, bạn có thể click vào biểu tượng tìm kiếm và điền IAM. Sau đó click vào dịch vụ IAM để truy cập vào giao diện quản lý dịch vụ IAM.</description></item></channel></rss>
