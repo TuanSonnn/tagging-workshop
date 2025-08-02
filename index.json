@@ -1,0 +1,120 @@
+[
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/2-prepare/2.1-create-ec2-with-tag/",
+	"title": "Create EC2 Instance with tag",
+	"tags": [],
+	"description": "",
+	"content": " Visit EC2 Management Console and click Launch Instances. Click Select to proceed with the Amazon Linux AMI. On Choose Instance Type, click Review and Launch. On the Review Instance Launch page, scroll the screen to the bottom towards the Tag section. Click Edit Tags to modify this EC2 instance’s tags. Click Add Tag to proceed with adding tags. Add the following tags as shown below and click Review and Launch Click Launch to proceed with creating your EC2 instance. Select Create a new key pair. Select key pair type as RSA. Name key pair name as Testtagging. Click Download Key Pair. Click Launch Instances Click View Instances to see the EC2 instance we just created.\nClick on the EC2 Instance we just created.\nClick the Tags tab to check the created tags. "
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/3-setting-up-iam-roles-and-permissions/3.1-create-iam-role-for-lambda-execution/",
+	"title": "Create IAM Role for Lambda Execution",
+	"tags": [],
+	"description": "",
+	"content": " Visit IAM Console\nSelect Roles in the left menu and Click Create role.\nTrusted entity: AWS service \u0026gt; Lambda. Permissions: Attach policies: AWSLambdaBasicExecutionRole (cho CloudWatch logs). AmazonEC2FullAccess (ví dụ cho tag EC2; điều chỉnh theo resource). Click Create Role\nOnce created, go back to the Roles list \u0026gt; Find and click on the LambdaTaggingExecutionRole role.\nTab Permissions \u0026gt; Click Add permissions \u0026gt; Click Create inline policy.\nIn Policy editor: Select the JSON tab.\nDelete the default content, then paste the following example JSON.\n{\u0026#34;Version\u0026#34;:\u0026#34;2012-10-17\u0026#34;,\u0026#34;Statement\u0026#34;:[{\u0026#34;Effect\u0026#34;:\u0026#34;Allow\u0026#34;,\u0026#34;Action\u0026#34;:[\u0026#34;tag:TagResources\u0026#34;,\u0026#34;tag:UntagResources\u0026#34;,\u0026#34;ec2:CreateTags\u0026#34;,\u0026#34;ec2:DeleteTags\u0026#34;],\u0026#34;Resource\u0026#34;:\u0026#34;*\u0026#34;}]} Policy name: TaggingInlinePolicy.\nDescription (optional): \u0026ldquo;Inline policy for resource tagging permissions\u0026rdquo;.\nClick \u0026ldquo;Create policy\u0026rdquo;.\nAfter creation, copy the role\u0026rsquo;s ARN (in the form arn:aws:iam::YOUR_ACCOUNT_ID:role/LambdaTaggingExecutionRole) for later use.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/4-create-tagging-automation-with-lambda-and-eventbridge/4.1-create-lambda-function-for-auto-tagging/",
+	"title": "Create Lambda Function For Auto Tagging",
+	"tags": [],
+	"description": "",
+	"content": " Visit Lambda Console\nClick Create function\nFunction configuration: Author from scratch (mặc định).\nFunction name: AutoTaggingFunction.\nRuntime: Python 3.12.\nArchitecture: x86_64 (mặc định).\nRole: Existing role \u0026gt; Chọn LambdaTaggingExecutionRole (từ Bước 2.1).\nClick Create function\nConfiguration \u0026gt; General configuration \u0026gt; Edit\nTimeout: 5 minutes Memory: 256 MB Click Save\nCode source \u0026gt; paste code Python (sample code).\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/1-introduction/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Overview Tags are key and value pairs that act as metadata for organizing your AWS resources. With most AWS resources, you have the option of adding tags when you create the resource, whether it’s an Amazon EC2 instance, an Amazon S3 bucket, or other resource. This lab will walkthrough assigning resource tags and using Resource Groups.\nTag Tags are words or phrases that act as metadata that you can use to identify and organize your AWS resources. A resource can have up to 50 user-applied tags. It can also have read-only system tags. Each tag consists of a key and one optional value.\nTags allow categorizing AWS resources in a variety of ways - such as grouping them by purpose, owner, or environment. This becomes useful when there are multiple resources of the same type, and you want to identify a specific resource based on some properties that have been assigned to it.\nAWS Resource Groups AWS Resource Groups is the service that lets you manage and automate tasks on large numbers of resources at one time. In AWS, a resource is an entity that you can work with. Examples include an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket. If you work with multiple resources, you might find it useful to manage them as a group rather than move from one AWS service to another for each task. A resource group is a collection of AWS resources that are all in the same AWS Region, and that match the criteria specified in the group’s query. In Resource Groups, there are two types of queries you can use to build a group: Tag-based and AWS CloudFormation stack-based.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/2-prepare/",
+	"title": "Preparation",
+	"tags": [],
+	"description": "",
+	"content": "This workshop covers the development of AWS resource tagging automation, cost allocation (cost allocation), compliance monitoring (compliance monitoring), and governance automation (governance automation).\nAfter the workshop, participants will:\nUnderstand resource tagging and cost automation.\nAutomate tags using Lambda and EventBridge.\nTrack untagged resources with AWS Config.\nCreate cost reports on dashboards using Cost Explorer.\nAutomate tag remediation and alerting using Systems Manager \u0026amp; SNS.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/2-prepare/2.2-active-cost-allocation-tag/",
+	"title": "Active Cost Allocation Tags",
+	"tags": [],
+	"description": "",
+	"content": "Search Billing on AWS console.\nClick Cost allocation tags on left menu panel.\nIn User-defined cost allocation tags, thêm các tag keys: Environment, Project, Owner, CostCenter\u0026hellip;\nClick Activate to activate. (Wait 24 hours for tags to appear in Cost Explorer).\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/3-setting-up-iam-roles-and-permissions/3.2-create-iam-role-for-eventbridge/",
+	"title": "Create IAM Role for EventBridge",
+	"tags": [],
+	"description": "",
+	"content": " Visit IAM Console\nSelect Roles in the left menu and Click Create role.\nTrusted entity: AWS service \u0026gt; Cloudwatch Event \u0026gt; Next. Next\nRole name: EventBridgeTaggingRole.\nDescription: \u0026ldquo;Role for EventBridge to trigger tagging Lambda\u0026rdquo;.\nReview và click Create role.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/4-create-tagging-automation-with-lambda-and-eventbridge/4.2-set-up-eventbridge-rule-to-trigger-lambda/",
+	"title": "Set Up EventBridge Rule to Trigger Lambda",
+	"tags": [],
+	"description": "",
+	"content": " Visit EventBridge Console\nSelect Rules in the left menu \u0026gt; Click Create rule\nRule detail: Name: AutoTagOnCreate. Description (optional): \u0026ldquo;Rule to auto-tag new resources\u0026rdquo;. Event bus: default. Event source: Other.\nCreation method \u0026gt; select Event pattern: Custom pattern (JSON editor) \u0026gt; Paste pattern\n{ \u0026ldquo;source\u0026rdquo;: [\u0026ldquo;aws.ec2\u0026rdquo;], \u0026ldquo;detail-type\u0026rdquo;: [\u0026ldquo;AWS API Call via CloudTrail\u0026rdquo;], \u0026ldquo;detail\u0026rdquo;: { \u0026ldquo;eventSource\u0026rdquo;: [\u0026ldquo;ec2.amazonaws.com\u0026rdquo;], \u0026ldquo;eventName\u0026rdquo;: [\u0026ldquo;RunInstances\u0026rdquo;] } }\nTargets: Target type: AWS service.\nSelect a target: Lambda function.\nFunction: Chọn AutoTaggingFunction.\nExecution role: Select Use existing role \u0026gt; EventBridgeTaggingRole(from Step 2.2) – this ensures EventBridge assumes the role to execute.\nNext Click Create Rule\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/4-create-tagging-automation-with-lambda-and-eventbridge/4.3-test-autotag/",
+	"title": "Test AutoTag",
+	"tags": [],
+	"description": "",
+	"content": "Once created, the rule should work immediately (since you enabled it in the first step). Test by temporarily launching an EC2 instance then chec. NO ADD ANY TAG, IT WILL AUTO ADD TAG IF SUCCESSFUL\nWait 1-2 minutes, check EC2 \u0026gt; Instances \u0026gt; Select new instance \u0026gt; Tags tab: tag will appear\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/3-setting-up-iam-roles-and-permissions/",
+	"title": "Setting Up IAM Roles And Permissions",
+	"tags": [],
+	"description": "",
+	"content": "Create roles for Lambda and other services to ensure secure access.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/5-cost-allocation-integration/5.1-automate-expense-reporting-with-lambda/",
+	"title": "Automate Expense Reporting With Lambda",
+	"tags": [],
+	"description": "",
+	"content": " Visit Lambda Console\nClick Create function.\nFunction configuration:\nAuthor from scratch.\nFunction name: CostReportFunction.\nRuntime: Python 3.12.\nRole: Existing role \u0026gt; LambdaTaggingExecutionRole\nClick Create function.\nConfiguration \u0026gt; General configuration \u0026gt; Edit:\nTimeout: 10 minutes. Memory: 512 MB. Create SNS Topic for report SNS Console \u0026gt; Create topic \u0026gt; Name: cost-reports \u0026gt; Standard \u0026gt; Create subscription: Email \u0026gt; Your email \u0026gt; Create.\nCode source \u0026gt; Paste code Schedule Trigger with EventBridge: EventBridge \u0026gt; Rules \u0026gt; Create rule.\nName: CostReportSchedule.\nRule type: Schedule. Schedule pattern: Rate-based \u0026gt; cron(0 0 1 * ? *)monthly. Targets: Lambda function \u0026gt; CostReportFunction. Create.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/4-create-tagging-automation-with-lambda-and-eventbridge/",
+	"title": "Create Tagging Automation With Lambda And EventBridge",
+	"tags": [],
+	"description": "",
+	"content": "Create a Lambda function to automatically tag, then use EventBridge to trigger it when a resource is created (e.g. EC2).\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/5-cost-allocation-integration/",
+	"title": "Cost Allocation Integration",
+	"tags": [],
+	"description": "",
+	"content": "Connect tags to billing to allocate costs, allowing for cost analysis by tag in Cost Explorer. Tags must be activated.\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/5-cost-allocation-integration/5.2-set-up-automated-compliance-monitoring/",
+	"title": "Set up automated compliance monitoring",
+	"tags": [],
+	"description": "",
+	"content": "Automatically monitor improperly tagged resources, detect compliance violations, and prepare data for audits\nVisit AWS Config Click Get started if not enabled.\nSelect:\nRecord all resources supported in this region Enable the Include global resources option Create or select an S3 bucket to store logs Select an IAM role or let AWS create it automatically Set up compliance monitoring rules\nGo to Rules Click Add rule Find the required-tags rule Select the required tags, for example: Environment, Owner, CostCenter Select the S3 bucket to store logs if it does not exist, create a new one (for example: compliance-logs-bucket) Select the IAM role created in the previous step or let AWS create it automatically Go to resources in scope\nAfter the rule runs, you will see the status of the resources:\n• ✅ Compliant (fully tagged)\n• ❌ Noncompliant (missing tag)\n"
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/",
+	"title": "Resource Tagging Automation With Cost Allocation",
+	"tags": [],
+	"description": "",
+	"content": "Resource Tagging Automation With Cost Allocation Overview Tags are key and value pairs that act as metadata for organizing your AWS resources. With most AWS resources, you have the option of adding tags when you create the resource, whether it’s an Amazon EC2 instance, an Amazon S3 bucket, or other resource. This lab will walkthrough assigning resource tags and using Resource Groups.\nTag Tags are words or phrases that act as metadata that you can use to identify and organize your AWS resources. A resource can have up to 50 user-applied tags. It can also have read-only system tags. Each tag consists of a key and one optional value.\nTags allow categorizing AWS resources in a variety of ways - such as grouping them by purpose, owner, or environment. This becomes useful when there are multiple resources of the same type, and you want to identify a specific resource based on some properties that have been assigned to it.\nAWS Resource Groups AWS Resource Groups is the service that lets you manage and automate tasks on large numbers of resources at one time. In AWS, a resource is an entity that you can work with. Examples include an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket. If you work with multiple resources, you might find it useful to manage them as a group rather than move from one AWS service to another for each task. A resource group is a collection of AWS resources that are all in the same AWS Region, and that match the criteria specified in the group’s query. In Resource Groups, there are two types of queries you can use to build a group: Tag-based and AWS CloudFormation stack-based.\nMain Content Introduction Preparation Setting up IAM Roles And Permisstions Create tagging automation with lambda function Cost Allocation Integration "
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://tuansonnn.github.io/tagging-workshop/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
